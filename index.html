@@ -94,6 +94,26 @@
         <div class="card" onclick="logout()" style="color:red;">🚪 Logout</div>
     </div>
 </div>
+    <!-- 100 CLICKS TASK PAGE -->
+<div id="p-click-task" class="page">
+    <div class="back-btn" onclick="nav('p-dash')">⬅ Back</div>
+    <div class="auth-card">
+        <h3>🖱️ 100 Clicks Challenge</h3>
+        <p>Complete 100 clicks to earn <b>100 Points</b>!</p>
+        
+        <div style="margin: 20px 0;">
+            <h1 id="click-count-display" style="font-size: 50px; color: var(--primary); margin: 0;">0</h1>
+            <p style="color: gray; font-size: 14px;">Progress: <span id="click-percent-text">0</span>%</p>
+        </div>
+
+        <div class="progress-container">
+            <div id="click-bar"></div>
+        </div>
+
+        <button id="click-main-btn" class="btn" onclick="handleUserClick()" style="height: 100px; border-radius: 50%; font-size: 20px;">CLICK ME!</button>
+        <h4 id="click-success-msg" style="display:none; color: var(--success);">✅ Task Completed for Today!</h4>
+    </div>
+</div>
 
 <!-- WHATSAPP TASK PAGE -->
 <div id="p-wa-task" class="page">
