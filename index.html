@@ -521,62 +521,7 @@
         </div>
     </div>
 </div>
-
-<script>
-    let clicks = 0;
-
-    // 2) Dashboard Grid mein button add karna
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            const grid = document.querySelector('.grid');
-            if (grid) {
-                const btnHtml = `<div class="card" id="click-task-btn" onclick="openClickTask()" style="background:#f0f3ff; border: 2px solid #6c5ce7;">👆 100 Clicks (200 Pts)</div>`;
-                grid.insertAdjacentHTML('afterbegin', btnHtml);
-            }
-        }, 2000); // 2 seconds baad button add hoga taake app load ho jaye
-    });
-
-    function openClickTask() {
-        if(uData.clickTaskClaimed) {
-            document.getElementById('click-area-box').style.display = 'none';
-            document.getElementById('c-done-msg').style.display = 'block';
-        } else {
-            document.getElementById('click-area-box').style.display = 'block';
-            document.getElementById('c-done-msg').style.display = 'none';
-        }
-        nav('p-click-task');
-    }
-
-    // 3) Click Logic
-    function doClick() {
-        if (uData.clickTaskClaimed) return;
-        
-        clicks++;
-        <script src="https://pl28633470.effectivegatecpm.com/48/59/08/4859083f886c1a09ed9a86ac9d282b9b.js"></script>
-        document.getElementById('c-count').innerText = clicks;
-        document.getElementById('c-pro').style.width = clicks + "%";
-        
-        // Button animation
-        const btn = document.getElementById('c-btn-main');
-        btn.style.transform = "scale(0.95)";
-        setTimeout(() => btn.style.transform = "scale(1)", 50);
-
-        if (clicks >= 100) {
-            finishTask();
-        }
-    }
-
-    async function finishTask() {
-        document.getElementById('c-btn-main').disabled = true;
-        try {
-            await db.ref('users/' + uID + '/points').transaction(v => (v || 0) + 200);
-            await db.ref('users/' + uID + '/clickTaskClaimed').set(true); // Permanent Flag
-            alert("Mubarak ho! 200 Points aapke balance mein add ho gaye hain.");
-            location.reload(); // Balance update karne ke liye
-        } catch (e) {
-            alert("Error: " + e.message);
-        }
-    }
+    
 </script>
 </body>
 </html>
