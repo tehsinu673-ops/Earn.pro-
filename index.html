@@ -1,7 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://pl28633470.effectivegatecpm.com/48/59/08/4859083f886c1a09ed9a86ac9d282b9b.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Earn Pro Max - Professional Rewards</title>
@@ -34,10 +34,14 @@
         .task-box { background: white; padding: 18px; border-radius: 20px; margin-bottom: 15px; border: 1px solid #f0f0f0; box-shadow: 0 5px 15px rgba(0,0,0,0.05); position: relative; }
         .reward-badge { background: #f0edff; color: var(--primary); padding: 4px 10px; border-radius: 8px; font-size: 12px; font-weight: 700; display: inline-block; margin-bottom: 5px; }
 
+        /* Progress Bar for Click Task */
+        .progress-container { width: 100%; background: #eee; height: 12px; border-radius: 10px; margin: 20px 0; overflow: hidden; }
+        #click-bar { width: 0%; height: 100%; background: var(--primary); transition: 0.1s; }
+
         /* Spin Wheel */
         #wheel-container { position: relative; width: 280px; height: 280px; margin: 30px auto; }
         #pointer { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 20px solid transparent; border-right: 20px solid transparent; border-top: 35px solid #ff4757; z-index: 10; }
-        #wheel { width: 100%; height: 100%; border-radius: 50%; border: 10px solid #2d3436; transition: transform 5s cubic-bezier(0.1, 0, 0, 1); background: conic-gradient(#ff7675 0 72deg, #fdcb6e 72deg 144deg, #55efc4 144deg 216deg, #74b9ff 216deg 288deg, #a29bfe 288deg 360deg); position: relative; overflow: hidden; }
+        #wheel { width: 100%; height: 100%; border-radius: 50%; border: 10px solid #2d3436; transition: transform 5s cubic-bezier(0.1, 0, 0, 1); background: conic-gradient(#ff7675 0 72deg, #fdcb6e 72deg 144deg, #55efc4 144deg 216deg, #74b9ff 216deg 288deg, #a29bfe 288deg 3600deg); position: relative; overflow: hidden; }
         .w-num { position: absolute; width: 100%; height: 100%; text-align: center; font-weight: 800; color: white; padding-top: 25px; font-size: 20px; }
         .n1 { transform: rotate(36deg); } .n2 { transform: rotate(108deg); } .n3 { transform: rotate(180deg); } .n4 { transform: rotate(252deg); } .n5 { transform: rotate(324deg); }
 
@@ -79,6 +83,7 @@
     </div>
     <div class="grid">
         <div class="card" onclick="nav('p-available-tasks')">🌍 Available Tasks</div>
+        <div class="card" onclick="nav('p-click-task')" style="background:#f0edff; border:1px solid var(--primary);">🖱️ 100 Clicks Task</div>
         <div class="card" onclick="nav('p-spin')">🎡 Spin Wheel</div>
         <div class="card" onclick="nav('p-daily')">🎯 10 Tasks</div>
         <div class="card" onclick="nav('p-scratch')">✨ Scratch</div>
@@ -94,7 +99,8 @@
         <div class="card" onclick="logout()" style="color:red;">🚪 Logout</div>
     </div>
 </div>
-    <!-- 100 CLICKS TASK PAGE -->
+
+<!-- 100 CLICKS TASK PAGE -->
 <div id="p-click-task" class="page">
     <div class="back-btn" onclick="nav('p-dash')">⬅ Back</div>
     <div class="auth-card">
@@ -173,7 +179,6 @@
     <div class="back-btn" onclick="nav('p-dash')">⬅ Back</div>
     <div class="auth-card">
         <h3>💰 Withdrawal Center</h3>
-        <script src="https://pl28633470.effectivegatecpm.com/48/59/08/4859083f886c1a09ed9a86ac9d282b9b.js"></script>
         <div class="info-box">
             <b>Your Balance:</b> <span class="pts-val">0</span> Pts<br>
             <b>Conversion:</b> 100 Pts = 10 PKR<br>
@@ -211,9 +216,7 @@
 <!-- AVAILABLE TASKS (GLOBAL) -->
 <div id="p-available-tasks" class="page">
     <div class="back-btn" onclick="nav('p-dash')">⬅ Back</div>
-    <script src="https://pl28633470.effectivegatecpm.com/48/59/08/4859083f886c1a09ed9a86ac9d282b9b.js"></script>
     <h3>🌍 Earning Task Channel</h3>
-    <div class="info-box">Complete tasks below and send a clear screenshot. Each task can only be completed <b>ONCE</b>. Spamming will result in a ban.</div>
     <div id="global-task-list"></div>
 </div>
 
@@ -239,14 +242,12 @@
         <button id="spin-btn" class="btn" onclick="runSpin()" style="width:200px;">SPIN</button>
         <h3 id="spin-status" style="color:var(--danger); display:none; margin-top:20px;">Used today. Come back tomorrow!</h3>
     </center>
-    <script src="https://pl28633470.effectivegatecpm.com/48/59/08/4859083f886c1a09ed9a86ac9d282b9b.js"></script>
 </div>
 
 <!-- SUPPORT CHAT -->
 <div id="p-support" class="page">
     <div class="back-btn" onclick="nav('p-dash')">⬅ Back</div>
     <div class="auth-card">
-        <script src="https://pl28633470.effectivegatecpm.com/48/59/08/4859083f886c1a09ed9a86ac9d282b9b.js"></script>
         <h3>💬 Admin Support Chat</h3>
         <div id="chat-display" class="chat-box"></div>
         <div style="display:flex; gap:10px;">
@@ -259,9 +260,8 @@
 <!-- OTHER PAGES -->
 <div id="p-daily" class="page"><div class="back-btn" onclick="nav('p-dash')">⬅ Back</div><h3>🎯 Daily 10 Tasks</h3><div id="daily-list"></div></div>
 <div id="p-scratch" class="page"><div class="back-btn" onclick="nav('p-dash')">⬅ Back</div><h3>✨ Daily 10 Scratches</h3><div class="grid" id="scratch-grid"></div></div>
-    <script src="https://pl28633470.effectivegatecpm.com/48/59/08/4859083f886c1a09ed9a86ac9d282b9b.js"></script>
 <div id="p-promo" class="page"><div class="back-btn" onclick="nav('p-dash')">⬅ Back</div><div class="auth-card"><h3>🎁 Use Promo Code</h3><input id="promo-input" placeholder="Enter Gift Code"><button class="btn" onclick="redeemPromo()">Redeem Now</button></div></div>
-<div id="p-refer" class="page"><div class="back-btn" onclick="nav('p-dash')">⬅ Back</div><div class="auth-card"><h3>👥 Your Refer Link</h3><div id="full-ref-link" style="word-break:break-all; background:#f4f4f4; padding:15px; border-radius:15px; font-size:12px; margin-bottom:15px;"></div><button class="btn" onclick="copyReferLink()">Copy Link</button><p style="font-size:12px; color:gray; margin-top:15px;">Invite friends and get <b>30 Points</b> reward!</p></div></div>
+<div id="p-refer" class="page"><div class="back-btn" onclick="nav('p-dash')">⬅ Back</div><div class="auth-card"><h3>👥 Your Refer Link</h3><div id="full-ref-link" style="word-break:break-all; background:#f4f4f4; padding:15px; border-radius:15px; font-size:12px; margin-bottom:15px;"></div><button class="btn" onclick="copyReferLink()">Copy Link</button></div></div>
 
 <!-- FIREBASE SDK -->
 <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
@@ -282,7 +282,7 @@
     firebase.initializeApp(firebaseConfig);
     const db = firebase.database(), auth = firebase.auth();
 
-    let uID = null, uData = {}, isRegister = false;
+    let uID = null, uData = {}, isRegister = false, sessionClicks = 0;
 
     // --- INITIALIZATION ---
     auth.onAuthStateChanged(user => {
@@ -310,7 +310,8 @@
                 lastResetDate: today,
                 scratches: {},
                 daily: {},
-                lastSpin: ""
+                lastSpin: "",
+                clickTaskDone: false
             });
         }
     }
@@ -321,6 +322,7 @@
         document.getElementById('dash-user-name').innerText = "Hi, " + (uData.name || "User");
         document.getElementById('full-ref-link').innerText = window.location.origin + window.location.pathname + "?ref=" + (uData.refCode || "");
         
+        // Spin logic
         const today = new Date().toDateString();
         if(uData.lastSpin === today) {
             document.getElementById('spin-btn').style.display = 'none';
@@ -329,29 +331,52 @@
             document.getElementById('spin-btn').style.display = 'block';
             document.getElementById('spin-status').style.display = 'none';
         }
+
+        // Click Task Logic
+        if(uData.clickTaskDone) {
+            document.getElementById('click-main-btn').style.display = 'none';
+            document.getElementById('click-success-msg').style.display = 'block';
+            document.getElementById('click-count-display').innerText = "100";
+            document.getElementById('click-bar').style.width = "100%";
+        } else {
+            document.getElementById('click-main-btn').style.display = 'block';
+            document.getElementById('click-success-msg').style.display = 'none';
+        }
+
         if(uData.waClaimed) document.getElementById('wa-claim-btn').disabled = true;
         if(uData.ytClaimed) document.getElementById('yt-claim-btn').disabled = true;
     }
 
-    // --- LOGIC: GLOBAL TASKS (ANTI-SPAM) ---
+    // --- 100 CLICKS TASK ---
+    async function handleUserClick() {
+        if(uData.clickTaskDone) return;
+        
+        sessionClicks++;
+        let percentage = (sessionClicks / 100) * 100;
+        
+        document.getElementById('click-count-display').innerText = sessionClicks;
+        document.getElementById('click-bar').style.width = percentage + "%";
+        document.getElementById('click-percent-text').innerText = Math.floor(percentage);
+
+        if(sessionClicks >= 100) {
+            document.getElementById('click-main-btn').disabled = true;
+            await db.ref('users/'+uID+'/points').transaction(v => (v || 0) + 100);
+            await db.ref('users/'+uID+'/clickTaskDone').set(true);
+            alert("100 Points Added Successfully!");
+            sessionClicks = 0;
+            nav('p-dash');
+        }
+    }
+
+    // --- LOGIC: GLOBAL TASKS ---
     function loadGlobalTasks() {
         db.ref('user_tasks').on('value', snap => {
             let h = "";
             snap.forEach(c => {
-                const t = c.val();
-                const tid = c.key;
+                const t = c.val(), tid = c.key;
                 const alreadyDone = uData.completedTasks && uData.completedTasks[tid];
-
                 if(t.creator !== uID && (t.completedCount || 0) < t.limit) {
-                    h += `<div class="task-box">
-                        <span class="reward-badge">${t.reward} Pts</span><br>
-                        <b>${t.type} Promotion</b><br>
-                        ${alreadyDone ? 
-                            `<button class="btn" disabled style="background:var(--success);">Submitted ✅</button>` : 
-                            `<button class="btn" style="width:100px; padding:6px; margin-top:5px;" onclick="window.open('${t.link}')">Open</button>
-                             <button class="btn" style="width:120px; padding:6px; margin-top:5px; background:var(--gold);" onclick="triggerUpload('${tid}')">Send Proof</button>`
-                        }
-                    </div>`;
+                    h += `<div class="task-box"><span class="reward-badge">${t.reward} Pts</span><br><b>${t.type} Promotion</b><br>${alreadyDone ? `<button class="btn" disabled style="background:var(--success);">Submitted ✅</button>` : `<button class="btn" style="width:100px; padding:6px; margin-top:5px;" onclick="window.open('${t.link}')">Open</button> <button class="btn" style="width:120px; padding:6px; margin-top:5px; background:var(--gold);" onclick="triggerUpload('${tid}')">Send Proof</button>`}</div>`;
                 }
             });
             document.getElementById('global-task-list').innerHTML = h || "No tasks available.";
@@ -362,35 +387,24 @@
         const input = document.createElement('input');
         input.type = 'file'; input.accept = 'image/*';
         input.onchange = e => {
-            const file = e.target.files[0];
-            const reader = new FileReader();
+            const file = e.target.files[0], reader = new FileReader();
             reader.onload = async () => {
-                await db.ref('task_proofs/' + tid + '/' + uID).set({
-                    workerName: uData.name,
-                    workerEmail: uData.email,
-                    img: reader.result,
-                    time: Date.now()
-                });
+                await db.ref('task_proofs/' + tid + '/' + uID).set({ workerName: uData.name, workerEmail: uData.email, img: reader.result, time: Date.now() });
                 await db.ref('users/' + uID + '/completedTasks/' + tid).set(true);
-                alert("Proof submitted! Reward after approval.");
+                alert("Proof submitted!");
             };
             reader.readAsDataURL(file);
         };
         input.click();
     }
 
-    // --- LOGIC: MY ADS & PROOFS ---
     function loadMyTasks() {
         db.ref('user_tasks').on('value', snap => {
             let h = "";
             snap.forEach(c => {
                 if(c.val().creator === uID) {
                     const tid = c.key;
-                    h += `<div class="task-box">
-                        <b>My ${c.val().type} Ad</b> (${c.val().completedCount}/${c.val().limit})<br>
-                        <div id="proofs-${tid}"></div>
-                        <button class="btn" style="background:var(--danger); padding:6px; font-size:11px; margin-top:10px;" onclick="deleteAd('${tid}')">Delete Ad</button>
-                    </div>`;
+                    h += `<div class="task-box"><b>My ${c.val().type} Ad</b> (${c.val().completedCount}/${c.val().limit})<br><div id="proofs-${tid}"></div><button class="btn" style="background:var(--danger); padding:6px; font-size:11px; margin-top:10px;" onclick="deleteAd('${tid}')">Delete Ad</button></div>`;
                     loadProofs(tid, c.val().reward);
                 }
             });
@@ -403,18 +417,8 @@
             const div = document.getElementById('proofs-' + tid);
             if(!div) return; div.innerHTML = "";
             snap.forEach(p => {
-                const d = p.val();
-                const workerUID = p.key;
-                div.innerHTML += `<div style="border:1px solid #eee; padding:12px; border-radius:12px; margin-top:10px; background:#fafafa;">
-                    <div style="font-size:12px; margin-bottom:5px;">
-                        <b>Worker:</b> ${d.workerName}<br><b>Email:</b> ${d.workerEmail}
-                    </div>
-                    <img src="${d.img}" class="proof-img" onclick="window.open(this.src)">
-                    <div style="display:flex; gap:10px; margin-top:10px;">
-                        <button class="btn" style="background:var(--success); padding:6px; font-size:12px;" onclick="approveProof('${tid}','${workerUID}',${reward})">Approve</button>
-                        <button class="btn" style="background:var(--danger); padding:6px; font-size:12px;" onclick="rejectProof('${tid}','${workerUID}')">Reject</button>
-                    </div>
-                </div>`;
+                const d = p.val(), workerUID = p.key;
+                div.innerHTML += `<div style="border:1px solid #eee; padding:12px; border-radius:12px; margin-top:10px; background:#fafafa;"><div style="font-size:12px; margin-bottom:5px;"><b>Worker:</b> ${d.workerName}</div><img src="${d.img}" class="proof-img" onclick="window.open(this.src)"><div style="display:flex; gap:10px; margin-top:10px;"><button class="btn" style="background:var(--success); padding:6px; font-size:12px;" onclick="approveProof('${tid}','${workerUID}',${reward})">Approve</button><button class="btn" style="background:var(--danger); padding:6px; font-size:12px;" onclick="rejectProof('${tid}','${workerUID}')">Reject</button></div></div>`;
             });
         });
     }
@@ -428,7 +432,6 @@
     async function rejectProof(tid, workerUID) { await db.ref('task_proofs/' + tid + '/' + workerUID).remove(); alert("Rejected."); }
     async function deleteAd(tid) { if(confirm("Delete Ad?")) { await db.ref('user_tasks/'+tid).remove(); await db.ref('task_proofs/'+tid).remove(); } }
 
-    // --- LOGIC: AUTH & REFER ---
     async function handleAuth() {
         const email = document.getElementById('auth-email').value, pass = document.getElementById('auth-pass').value;
         const refBy = new URLSearchParams(window.location.search).get('ref');
@@ -447,7 +450,6 @@
         } catch(e) { alert(e.message); }
     }
 
-    // --- GAMES ---
     async function runSpin() {
         const wheel = document.getElementById('wheel');
         wheel.style.transform = `rotate(${3600 + 72}deg)`;
@@ -468,7 +470,6 @@
     async function doScratch(el, id) { if(!uData.scratches || !uData.scratches[id]) { await db.ref('users/'+uID+'/points').transaction(v=>(v||0)+5); await db.ref('users/'+uID+'/scratches/'+id).set(true); } }
     async function doDaily(btn, id) { await db.ref('users/'+uID+'/points').transaction(v=>(v||0)+5); await db.ref('users/'+uID+'/daily/'+id).set(true); }
 
-    // --- CORE TX ---
     async function submitWithdraw() {
         const pts = parseInt(document.getElementById('wit-pts').value);
         if(pts < 3000 || (uData.points || 0) < pts) return alert("Min 3000 Points!");
@@ -487,11 +488,11 @@
         db.ref('withdraws').orderByChild('uID').equalTo(uID).on('value', s => { let h = ""; s.forEach(c => { const w = c.val(); h += `<div class="history-item"><div>${w.pts} Pts</div><span class="status-badge status-${w.status}">${w.status}</span></div>`; }); document.getElementById('withdraw-history').innerHTML = h || "No History"; });
     }
 
-    // --- OTHER ---
     function openWaLink() { db.ref('settings/waLink').once('value', s => { if(s.exists()) window.open(s.val(), '_blank'); }); }
     function openYtLink() { db.ref('settings/ytLink').once('value', s => { if(s.exists()) window.open(s.val(), '_blank'); }); }
     async function claimWaReward() { if(!uData.waClaimed) { await db.ref('users/'+uID+'/points').transaction(v=>(v||0)+30); await db.ref('users/'+uID+'/waClaimed').set(true); alert("30 Pts Claimed!"); } }
     async function claimYtReward() { if(!uData.ytClaimed) { await db.ref('users/'+uID+'/points').transaction(v=>(v||0)+20); await db.ref('users/'+uID+'/ytClaimed').set(true); alert("20 Pts Claimed!"); } }
+    
     async function createNewTask() {
         const r = parseInt(document.getElementById('task-reward').value), l = parseInt(document.getElementById('task-limit').value);
         if((uData.depPoints || 0) < (r*l)) return alert("Low Ads Balance!");
@@ -499,49 +500,25 @@
         await db.ref('user_tasks').push({ creator: uID, type: document.getElementById('task-platform').value, link: document.getElementById('task-link').value, reward: r, limit: l, completedCount: 0 });
         alert("Promotion Launched!"); nav('p-dash');
     }
+    
     async function redeemPromo() {
         const code = document.getElementById('promo-input').value.trim().toUpperCase();
         db.ref('promos').orderByChild('code').equalTo(code).once('value', async s => {
             if(!s.exists()) return alert("Invalid Code");
             let pk, pd; s.forEach(c => { pk=c.key; pd=c.val(); });
             if(uData.usedPromos && uData.usedPromos[pk]) return alert("Used");
-            if((pd.usedCount || 0) >= pd.limit) return alert("Expired");
             await db.ref('users/'+uID+'/points').transaction(v=>(v||0)+pd.pts);
-            await db.ref('promos/'+pk+'/usedCount').transaction(c=>(c||0)+1);
             await db.ref('users/'+uID+'/usedPromos/'+pk).set(true);
             alert("Success!");
         });
     }
+
     function sendChatMessage() { const m = document.getElementById('chat-input').value; if(m) { db.ref('chats/'+uID).push({ sender: 'user', msg: m, time: Date.now() }); document.getElementById('chat-input').value = ""; } }
     function loadChat() { db.ref('chats/'+uID).on('value', s => { let h = ""; s.forEach(c => { const m = c.val(); h += `<div class="msg ${m.sender}">${m.msg}</div>`; }); const d = document.getElementById('chat-display'); d.innerHTML = h; d.scrollTop = d.scrollHeight; }); }
     function nav(id) { document.querySelectorAll('.page').forEach(p => p.classList.remove('active')); document.getElementById(id).classList.add('active'); }
     function toggleAuth() { isRegister = !isRegister; document.getElementById('reg-fields').style.display = isRegister ? 'block' : 'none'; document.getElementById('auth-title').innerText = isRegister ? "Register" : "Login"; }
     function logout() { auth.signOut().then(() => location.reload()); }
     function copyReferLink() { navigator.clipboard.writeText(document.getElementById('full-ref-link').innerText); alert("Copied!"); }
-</script> 
- <script src="https://pl28644443.effectivegatecpm.com/c0/57/f2/c057f2afc18ec40a930f23339db6ab9a.js"></script>
-    <!-- 1) Naya Task Page (HTML) -->
-<div id="p-click-task" class="page">
-    <div class="back-btn" onclick="nav('p-dash')">⬅ Back</div>
-    <div class="auth-card">
-        <h3>👆 Lifetime Click Challenge</h3>
-        <div id="click-area-box">
-            <p>Button par 100 baar click karein aur 200 Points hasil karein. (Ye task sirf 1 baar hoga)</p>
-            <h2 id="c-count" style="font-size: 50px; color: #6c5ce7; margin: 10px 0;">0</h2>
-            <div style="width: 100%; background: #eee; height: 12px; border-radius: 10px; margin-bottom: 20px; overflow: hidden;">
-                <div id="c-pro" style="width: 0%; height: 100%; background: #2ecc71; transition: 0.1s;"></div>
-            </div>
-            <button id="c-btn-main" onclick="doClick()" style="width: 130px; height: 130px; border-radius: 50%; background: #6c5ce7; color: white; border: 6px solid #eee; font-weight: 800; cursor: pointer; box-shadow: 0 6px 0 #4834d4; outline: none; transition: 0.1s;">CLICK</button>
-        </div>
-        <div id="c-done-msg" style="display:none; text-align: center;">
-            <div style="font-size: 50px;">✅</div>
-            <h3 style="color: #2ecc71;">Task Completed!</h3>
-            <p>Aapne 200 Points pehle hi hasil kar liye hain.</p>
-            <button class="btn" onclick="nav('p-dash')">Go Back</button>
-        </div>
-    </div>
-</div>
-    
 </script>
 </body>
 </html>
